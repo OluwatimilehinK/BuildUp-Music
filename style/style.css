@@ -1,0 +1,235 @@
+:root{
+    --backgroundColor: #313133;
+    --iconColor: #1D6F56;
+    --cardColor: #3E3E3E;
+    --activeCardColor:  #4B4B4B;
+    --textColor: #9E9EA0;
+    --currentMusic: #333335;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background-color: var(--backgroundColor);
+    padding: 0 20px 0 20px;
+    height: 100vh;
+    overflow: auto;
+    width: 50%;
+}
+
+.header{
+    display: flex;
+    position: sticky;
+    top:0;
+    padding: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--iconColor);
+    backdrop-filter: blur(10px);
+}
+
+.header p{
+    color: var(--textColor);
+}
+
+.header input{
+    padding: 8px 12px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight:500 ;
+    background-color: var(--cardColor);
+}
+
+.header input::after{
+    outline: none;
+    border: none;
+}
+
+#playlist-container{
+    margin-top: 30px;
+}
+
+.playlist-cards{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--cardColor);
+    padding: 8px 12px;
+    height:15vh;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.music-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height:max-content;
+    height: 85vh;
+    /* border: 1px solid var(--textColor); */
+    /* border-radius: 50%; */
+}
+
+#music-cover{
+    background-position: center;
+    background-size: contain;
+}
+
+#music-cover img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#music-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid var(--textColor);
+    border-radius: 50%;
+}
+
+#music-banner img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.music-info h4{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.music-info p{
+    color: var(--textColor);
+    font-size: 14px;
+}
+
+#current-Music{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    bottom: 1px;
+    gap: 10px;
+    background-color: var(--currentMusic);
+    padding: 8px 12px;
+    height:15vh;
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 10px;
+    box-shadow: 2px 0px 0px var(--textColor);
+}
+
+#info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--textColor);
+    text-align: center;
+}
+
+#info-container h3{
+
+    color: white;
+    font-size: 30px;
+}
+
+.musicProgress{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    width: 100%;
+}
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #2b2b2b;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 40%; 
+    height: 100%;
+    background: #00b576;
+    border-radius: 50px;
+}
+
+.music-controls{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.control-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #2D2D2D;
+    border-radius: 50%;
+    box-shadow: 2px 1px 0px var(--textColor);
+
+}
+
+.control-btn i{
+    color: var(--iconColor);
+}
+
+.control-btn-play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #2D2D2D;
+    border-radius: 50%;
+    box-shadow: 2px 1px 0px var(--textColor);
+
+}
+
+.control-btn-play i{
+    color: var(--iconColor);
+}
+
+
+@media(max-width: 740px){
+.container{
+    background-color: var(--backgroundColor);
+    padding: 0 30px 0 30px;
+    height: 100vh;
+    width: 100%;
+    overflow:auto;
+}
+
+}
