@@ -1,0 +1,69 @@
+// Select elements
+const audioPlayer = document.getElementById("audioPlayer");
+const playBtn = document.getElementById("playBtn");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+const playIcon = playBtn.querySelector("i");
+
+// Playlist
+const playlist = [
+    "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3",
+    "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3",
+    "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3"
+];
+
+let currentIndex = 0;
+let isPlaying = false;
+
+// Load song function
+function loadSong(index) {
+    audioPlayer.src = playlist[index];
+    audioPlayer.load();
+}
+
+// Play music
+function playMusic() {
+    audioPlayer.play();
+    isPlaying = true;
+
+    // Switch icon to pause
+    playIcon.classList.remove("fa-play");
+    playIcon.classList.add("fa-pause");
+}
+
+// Pause music
+function pauseMusic() {
+    audioPlayer.pause();
+    isPlaying = false;
+
+    // Switch icon to play
+    playIcon.classList.remove("fa-pause");
+    playIcon.classList.add("fa-play");
+}
+
+// Toggle Play/Pause
+playBtn.addEventListener("click", () => {
+    if (isPlaying) {
+        pauseMusic();
+    } else {
+        playMusic();
+    }
+});
+
+// Next Song
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % playlist.length;
+    loadSong(currentIndex);
+    playMusic(); // auto-play next
+});
+
+// Previous Song
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+    loadSong(currentIndex);
+    playMusic(); // auto-play prev
+});
+
+// Load first song on page load
+loadSong(currentIndex);
