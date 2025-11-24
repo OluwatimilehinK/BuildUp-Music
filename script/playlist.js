@@ -17,13 +17,13 @@ let currentIndex = 0;
 let isPlaying = false;
 
 // Load song function
-function loadSong(index) {
+export function defaultLoadSong(index) {
     audioPlayer.src = playlist[index];
     audioPlayer.load();
 }
 
 // Play music
-function playMusic() {
+export function defaultPlayMusic() {
     audioPlayer.play();
     isPlaying = true;
 
@@ -33,37 +33,37 @@ function playMusic() {
 }
 
 // Pause music
-function pauseMusic() {
+export function defaultPauseMusic() {
     audioPlayer.pause();
     isPlaying = false;
 
     // Switch icon to play
-    playIcon.classList.remove("fa-pause");
-    playIcon.classList.add("fa-play");
+    playIcon.classList.remove("fa-play");
+    playIcon.classList.add("fa-pause");
 }
 
 // Toggle Play/Pause
 playBtn.addEventListener("click", () => {
     if (isPlaying) {
-        pauseMusic();
+        defaultPauseMusic();
     } else {
-        playMusic();
+        defaultPlayMusic();
     }
 });
 
 // Next Song
 nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % playlist.length;
-    loadSong(currentIndex);
-    playMusic(); // auto-play next
+    defaultLoadSong(currentIndex);
+    defaultPlayMusic(); // auto-play next
 });
 
 // Previous Song
 prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
-    loadSong(currentIndex);
-    playMusic(); // auto-play prev
+    defaultLoadSong(currentIndex);
+    defaultPlayMusic(); // auto-play prev
 });
 
 // Load first song on page load
-loadSong(currentIndex);
+defaultLoadSong(currentIndex);

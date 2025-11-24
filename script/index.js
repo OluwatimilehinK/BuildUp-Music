@@ -15,20 +15,22 @@ let currentIndex = 0;
 let isPlaying = false;
 
 // Load a song
-function loadSong(index) {
+
+
+export function loadSong(index) {
     audioPlayer.src = playlist[index];
     audioPlayer.load();
 }
 
 // Play music
-function playMusic() {
+export function playMusic() {
     audioPlayer.play();
     isPlaying = true;
     playIcon.classList.replace("fa-pause", "fa-play");
 }
 
 // Pause music
-function pauseMusic() {
+export function pauseMusic() {
     audioPlayer.pause();
     isPlaying = false;
     playIcon.classList.replace("fa-play", "fa-pause");
