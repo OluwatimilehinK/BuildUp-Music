@@ -38,16 +38,16 @@ export function defaultPauseMusic() {
     isPlaying = false;
 
     // Switch icon to play
-    playIcon.classList.remove("fa-pause");
-    playIcon.classList.add("fa-play");
+    playIcon.classList.remove("fa-play");
+    playIcon.classList.add("fa-pause");
 }
 
 // Toggle Play/Pause
 playBtn.addEventListener("click", () => {
     if (isPlaying) {
-        pauseMusic();
+        defaultPauseMusic();
     } else {
-        playMusic();
+        defaultPlayMusic();
     }
 });
 
@@ -56,6 +56,7 @@ nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % playlist.length;
     defaultLoadSong(currentIndex);
     playMusic(); // auto-play next
+    defaultPlayMusic(); // auto-play next
 });
 
 // Previous Song
