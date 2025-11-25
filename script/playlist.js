@@ -17,13 +17,13 @@ let currentIndex = 0;
 let isPlaying = false;
 
 // Load song function
-function loadSong(index) {
+export function defaultLoadSong(index) {
     audioPlayer.src = playlist[index];
     audioPlayer.load();
 }
 
 // Play music
-function playMusic() {
+export function defaultPlayMusic() {
     audioPlayer.play();
     isPlaying = true;
 
@@ -33,7 +33,7 @@ function playMusic() {
 }
 
 // Pause music
-function pauseMusic() {
+export function defaultPauseMusic() {
     audioPlayer.pause();
     isPlaying = false;
 
@@ -54,16 +54,16 @@ playBtn.addEventListener("click", () => {
 // Next Song
 nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % playlist.length;
-    loadSong(currentIndex);
+    defaultLoadSong(currentIndex);
     playMusic(); // auto-play next
 });
 
 // Previous Song
 prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
-    loadSong(currentIndex);
+    defaultLoadSong(currentIndex);
     playMusic(); // auto-play prev
 });
 
 // Load first song on page load
-loadSong(currentIndex);
+defaultLoadSong(currentIndex);
