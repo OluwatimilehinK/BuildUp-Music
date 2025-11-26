@@ -1,20 +1,14 @@
 import { loadSong, playMusic, pauseMusic} from "./index.js";
-import {defaultLoadSong, defaultPlayMusic, defaultPauseMusic} from "./playlist.js"
-loadSong(index)
-playMusic()
-pauseMusic()
-defaultLoadSong(currentIndex)
-defaultPlayMusic()
-defaultPauseMusic()
 import { showNoResult } from "./filter.js";
-import { defaultLoadSong, defaultPlayMusic, defaultPauseMusic } from "./playlist.js";
-showNoResult()
+import {defaultLoadSong, defaultPlayMusic, defaultPauseMusic} from "./playlist.js"
+
+import initPlaylist from './defaultPlaylist.js';
 
 defaultLoadSong(index), defaultPlayMusic(), defaultPauseMusic()
 
 loadSong(index), playMusic(), pauseMusic()
 
-import initPlaylist from './defaultPlaylist.js';
+showNoResult(found)
 
 initPlaylist([
    null, null, null, null, null, null, null
