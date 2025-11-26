@@ -7,3 +7,8 @@ defaultLoadSong(index), defaultPlayMusic(), defaultPauseMusic()
 
 loadSong(index), playMusic(), pauseMusic()
 
+import initPlaylist from './defaultPlaylist.js';
+
+initPlaylist([
+   null, null, null, null, null, null, null
+]);
