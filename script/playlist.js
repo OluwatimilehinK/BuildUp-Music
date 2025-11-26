@@ -4,7 +4,7 @@ const playBtn = document.getElementById("playBtn");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
-const playIcon = playBtn.querySelector("i");
+const playIcon = document.getElementById("playBtn");
 
 // Playlist
 const playlist = [
