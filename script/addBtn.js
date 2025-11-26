@@ -16,12 +16,12 @@ fileInput.accept = "audio/*";
 fileInput.hidden = true;
 document.body.appendChild(fileInput);
 
-//CLICK + BUTTON → OPEN FILE PICKER
+// CLICK + BUTTON → OPEN FILE PICKER
 addBtn.addEventListener("click", () => {
     fileInput.click();
 });
 
-//FILE SELECTED → ADD TO ARRAY, SAVE TO LOCAL STORAGE + DISPLAY
+// FILE SELECTED → ADD TO ARRAY, SAVE TO LOCAL STORAGE + DISPLAY
 fileInput.addEventListener("change", function () {
     const file = this.files[0];
     if (!file) return;
@@ -46,7 +46,7 @@ fileInput.addEventListener("change", function () {
     addSongCard(newSong);
 });
 
-//FUNCTION TO CREATE A NEW MUSIC CARD & ATTACH PLAY EVENT
+// FUNCTION TO CREATE A NEW MUSIC CARD & ATTACH PLAY EVENT
 export function addSongCard(song) {
     const card = document.createElement("div");
     card.classList.add("playlist-cards");
@@ -74,7 +74,7 @@ export function addSongCard(song) {
     });
 }
 
-//LOAD SONGS FROM LOCAL STORAGE ON PAGE LOAD
+// 5️⃣ LOAD SONGS FROM LOCAL STORAGE ON PAGE LOAD
 export function loadSongsFromLocal() {
     if (songs.length === 0) return;
 
