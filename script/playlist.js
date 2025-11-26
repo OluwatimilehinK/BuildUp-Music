@@ -42,14 +42,14 @@ export function defaultPauseMusic() {
     playIcon.classList.add("fa-pause");
 }
 
-// Toggle Play/Pause
-playBtn.addEventListener("click", () => {
-    if (isPlaying) {
-        defaultPauseMusic();
-    } else {
-        defaultPlayMusic();
-    }
-});
+// // Toggle Play/Pause
+// playBtn.addEventListener("click", () => {
+//     if (isPlaying) {
+//         defaultPauseMusic();
+//     } else {
+//         defaultPlayMusic();
+//     }
+// });
 
 // Next Song
 nextBtn.addEventListener("click", () => {
