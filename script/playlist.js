@@ -55,6 +55,7 @@ playBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % playlist.length;
     defaultLoadSong(currentIndex);
+    playMusic(); // auto-play next
     defaultPlayMusic(); // auto-play next
 });
 
@@ -62,7 +63,7 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
     defaultLoadSong(currentIndex);
-    defaultPlayMusic(); // auto-play prev
+    playMusic(); // auto-play prev
 });
 
 // Load first song on page load

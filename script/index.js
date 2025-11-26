@@ -4,18 +4,16 @@ const playPauseBtn = document.getElementById("playPauseBtn");
 const nextBtn = document.getElementById("nextBtn");
 const playIcon = playPauseBtn.querySelector("i");
 
-// Online songs (add more if you want)
+// Online songs playlist
 const playlist = [
     "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3",
-    "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3",
-    "https://cdn.trendybeatz.com/audio/Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3"
+    "https://cdn.trendybeatz.com/audio/Adekunle-Gold-Many-People-(TrendyBeatz.com).mp3",
 ];
 
 let currentIndex = 0;
 let isPlaying = false;
 
 // Load a song
-
 
 export function loadSong(index) {
     audioPlayer.src = playlist[index];
